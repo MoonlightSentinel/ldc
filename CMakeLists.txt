@@ -601,6 +601,9 @@ if(MSVC)
         list(APPEND LDC_LINKERFLAG_LIST "/NOOPTTLS")
     endif()
 endif()
+
+list(APPEND LDC_LINKERFLAG_LIST "-lLLVMGlobalISel")
+
 if(LDC_WITH_LLD)
     if(NOT (LDC_LLVM_VER LESS 1000))
         if(MSVC)
